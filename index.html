@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <header>
+        <h1>Quiz App</h1>
+        <div>
+          <h3><samp id="numQuestion"></samp></h3>
+          <h3><samp id="time"></samp></h3>
+        </div>
+      </header>
+      <div class="startGame">
+        <div id="inputSection">
+          <input
+            maxlength="20"
+            type="text"
+            name="NAME"
+            id="studentName"
+            placeholder="Enter your Full Name"
+          />
+          <label id="label"></label>
+        </div>
+        <div id="scoreSection">
+          <h1 id="result">Fell</h1>
+          <h2 id="score"></h2>
+        </div>
+      </div>
+      <div class="hidden" id="QuestionBar">
+        <div class="Qestion">
+          <h1><samp id="Question"></samp></h1>
+        </div>
+        <div id="answer-buttons">
+          <button id="A" class="btn"></button>
+          <button id="B" class="btn"></button>
+          <button id="C" class="btn"></button>
+          <button id="D" class="btn"></button>
+        </div>
+      </div>
+
+      <div class="nextbnt">
+        <button id="start">Start Quiz</button>
+        <button id="Next" class="hidden">Next</button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="Qestion.js"></script>
+  </body>
+</html>
