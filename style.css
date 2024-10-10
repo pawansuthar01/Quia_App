@@ -109,3 +109,11 @@ body {
     margin-inline: 250px;
   }
 }
+@media (max-width: 1000px) {
+  .main {
+    margin-inline: 20px;
+  }
+  .nextbnt button {
+    padding: 5px;
+  }
+}

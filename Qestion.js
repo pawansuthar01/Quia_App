@@ -253,3 +253,5 @@ const mathQuiz = [
     correctAnswer: 1,
   },
 ];
+let selfQuestion;
+selfQuestion = mathQuiz.sort(() => Math.random() - 0.5);

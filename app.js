@@ -38,19 +38,19 @@ start.addEventListener("click", () => {
 
 function setQuestion() {
   clearInterval(interval);
-
+  time.style.color = "white";
   if (currentQuestionIndex < 10) {
-    const questionData = mathQuiz[currentQuestionIndex];
     numQuestion.innerText = `Question ${currentQuestionIndex + 1}/10`;
-    Question.innerText = questionData.question;
+    Question.innerText = selfQuestion[currentQuestionIndex].question;
 
     btns.forEach((btn, index) => {
-      btn.textContent = questionData.options[index];
+      btn.textContent = selfQuestion[currentQuestionIndex].options[index];
       btn.style.backgroundColor = "white"; // Reset colors
       btn.style.pointerEvents = "auto"; // Enable buttons
       btn.onclick = () => checkAnswer(index);
     });
   } else {
+    time.style.display = "none";
     showscore();
     scoreSection.classList.remove("hidden");
     QuestionBar.classList.add("hidden");
@@ -59,15 +59,19 @@ function setQuestion() {
 }
 
 function showTime() {
-  timeline = 20;
+  timeline = 10;
   time.textContent = `Time: ${timeline}`;
 
   interval = setInterval(() => {
     timeline--;
+    if (timeline <= 5) {
+      time.style.color = "red";
+    }
     time.textContent = `Time: ${timeline}`;
     if (timeline < 0) {
+      time.style.color = "white";
       clearInterval(interval);
-      Next.click(); // Move to next question automatically
+      Next.click();
     }
   }, 1000);
 }
